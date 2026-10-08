@@ -9,7 +9,7 @@
 
   <body class="bg-[#0D1117] font-sans text-white">
     <header
-      class="flex flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between"
+      class="sticky top-0 z-50 grid grid-cols-[1fr_auto] items-center gap-4 bg-[#0D1117] px-6 py-4 lg:grid-cols-[1fr_auto_1fr]"
     >
       <a
         href="#home"
@@ -22,15 +22,27 @@
         type="button"
         aria-controls="main-navigation"
         aria-expanded="false"
-        class="self-start rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] md:hidden"
+        class="rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:hidden"
       >
-        Menú
+        <span class="sr-only">Menú principal</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+          class="h-6 w-6"
+        >
+          <path d="M4 6h16 M4 12h16 M4 18h16" stroke-linecap="round" />
+        </svg>
       </button>
 
       <nav
         id="main-navigation"
         aria-label="Navegación principal"
-        class="hidden flex-col items-start gap-6 md:flex md:flex-row md:items-center"
+        class="absolute top-full right-6 z-50 hidden flex-col items-end gap-6 rounded-lg bg-[#0D1117] p-6 shadow-xl lg:static lg:col-start-2 lg:row-start-1 lg:flex lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none min-w-30 border border-white/10 lg:min-w-0 lg:border-0"
       >
         <a
           href="#about"
@@ -55,11 +67,17 @@
 
         <a
           href="#contact"
-          class="rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          class="rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 lg:hidden hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
         >
           Contacto
         </a>
       </nav>
+      <a
+        href="#contact"
+        class="hidden rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:col-start-3 lg:row-start-1 lg:block lg:justify-self-end"
+      >
+        Contacto
+      </a>
     </header>
 
     <main>
