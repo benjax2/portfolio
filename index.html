@@ -17,67 +17,138 @@
         >Benjamín Rodríguez</a
       >
 
-      <button
-        id="menu-toggle"
-        type="button"
-        aria-controls="main-navigation"
-        aria-expanded="false"
-        class="rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:hidden"
-      >
-        <span class="sr-only">Menú principal</span>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          aria-hidden="true"
-          class="h-6 w-6"
-        >
-          <path d="M4 6h16 M4 12h16 M4 18h16" stroke-linecap="round" />
-        </svg>
-      </button>
-
       <nav
         id="main-navigation"
         aria-label="Navegación principal"
-        class="absolute top-full right-6 z-50 hidden flex-col items-end gap-6 rounded-lg bg-[#0D1117] p-6 shadow-xl lg:static lg:col-start-2 lg:row-start-1 lg:flex lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none min-w-30 border border-white/10 lg:min-w-0 lg:border-0"
+        class="absolute top-full right-6 z-50 hidden flex-col items-stretch gap-1.5 min-w-36 lg:gap-6 rounded-lg bg-[#0D1117] p-2 shadow-xl lg:static lg:col-start-2 lg:row-start-1 lg:flex lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none border border-white/10 lg:min-w-0 lg:border-0"
       >
         <a
           href="#about"
-          class="transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
         >
           Sobre mí
         </a>
 
         <a
           href="#skills"
-          class="transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
         >
           Habilidades
         </a>
 
         <a
           href="#projects"
-          class="transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
         >
           Proyectos
         </a>
 
         <a
           href="#contact"
-          class="rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 lg:hidden hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          class="text-center rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 lg:hidden hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
         >
           Contacto
         </a>
       </nav>
-      <a
-        href="#contact"
-        class="hidden rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:col-start-3 lg:row-start-1 lg:block lg:justify-self-end"
+
+      <!-- MENÚ DE IDIOMAS -->
+      <div
+        class="col-start-2 row-start-1 flex items-center justify-self-end gap-3 lg:col-start-3"
       >
-        Contacto
-      </a>
+        <div class="relative">
+          <button
+            id="language-toggle"
+            type="button"
+            aria-label="Seleccionar idioma"
+            aria-controls="language-options"
+            aria-expanded="false"
+            class="flex min-h-11 items-center gap-2 rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              class="h-6 w-6"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <ellipse cx="12" cy="12" rx="4.5" ry="9" />
+              <path d="M12 3v18" />
+              <path d="M3 12h18" />
+              <path d="M4.5 7c4.5 2 10.5 2 15 0" />
+              <path d="M4.5 17c4.5-2 10.5-2 15 0" />
+            </svg>
+            <span id="current-language" aria-hidden="true">ES</span>
+          </button>
+          <div
+            id="language-options"
+            class="absolute top-full right-0 z-50 mt-2 hidden min-w-40 rounded-lg border border-white/10 bg-[#0D1117] p-2 shadow-xl"
+          >
+            <button
+              type="button"
+              lang="es"
+              data-language="es"
+              aria-pressed="true"
+              class="transition-colors duration-300 block min-h-11 w-full rounded px-3 py-2 text-left hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-[#E3FF6A] aria-pressed:text-[#E3FF6A]"
+            >
+              Español
+            </button>
+
+            <button
+              type="button"
+              lang="en"
+              data-language="en"
+              aria-pressed="false"
+              class="transition-colors duration-300 block min-h-11 w-full rounded px-3 py-2 text-left hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-[#E3FF6A] aria-pressed:text-[#E3FF6A]"
+            >
+              English
+            </button>
+
+            <button
+              type="button"
+              lang="pt-BR"
+              data-language="pt-BR"
+              aria-pressed="false"
+              class="transition-colors duration-300 block min-h-11 w-full rounded px-3 py-2 text-left hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-[#E3FF6A] aria-pressed:text-[#E3FF6A]"
+            >
+              Português
+            </button>
+          </div>
+        </div>
+
+        <a
+          href="#contact"
+          class="hidden rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:block"
+        >
+          Contacto
+        </a>
+
+        <button
+          id="menu-toggle"
+          type="button"
+          aria-controls="main-navigation"
+          aria-expanded="false"
+          class="cursor-pointer rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:hidden"
+        >
+          <span class="sr-only">Menú principal</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            class="h-6 w-6"
+          >
+            <path d="M4 6h16 M4 12h16 M4 18h16" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
     </header>
 
     <main>
