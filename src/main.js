@@ -163,3 +163,104 @@ languageContainer.addEventListener('focusout', (event) => {
 menuButton.addEventListener('click', () => {
   setLanguagePanelOpen(false);
 });
+
+// ==================== CONFIGURACIÓN DE IDIOMAS ====================
+
+// Diccionario de traducciones del header.
+const translations = {
+  es: {
+    code: 'ES',
+    about: 'Sobre mí',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    contact: 'Contacto',
+    navigation: 'Navegación principal',
+    selectLanguage: 'Seleccionar idioma. Actual: Español',
+    mainMenu: 'Menú principal',
+  },
+  en: {
+    code: 'EN',
+    about: 'About me',
+    skills: 'Skills',
+    projects: 'Projects',
+    contact: 'Contact',
+    navigation: 'Main navigation',
+    selectLanguage: 'Select language. Current: English',
+    mainMenu: 'Main menu',
+  },
+  'pt-BR': {
+    code: 'PT',
+    about: 'Sobre mim',
+    skills: 'Habilidades',
+    projects: 'Projetos',
+    contact: 'Contato',
+    navigation: 'Navegação principal',
+    selectLanguage: 'Selecionar idioma. Atual: Português',
+    mainMenu: 'Menu principal',
+  },
+};
+
+const currentLanguage = document.getElementById('current-language');
+const languageChoices = languageOptions.querySelectorAll('[data-language]');
+
+// Guardado de idioma en localStorage
+const languageStorageKey = 'portfolio-language';
+
+function saveLanguage(language) {
+  try {
+    localStorage.setItem(languageStorageKey, language);
+  } catch {
+    // El cambio de idioma funciona aunque no se pueda guardar.
+  }
+}
+
+function getSavedLanguage() {
+  try {
+    const savedLanguage = localStorage.getItem(languageStorageKey);
+    const supportedLanguages = ['es', 'en', 'pt-BR'];
+
+    return supportedLanguages.includes(savedLanguage) ? savedLanguage : 'es';
+  } catch {
+    return 'es';
+  }
+}
+
+function applyLanguage(language) {
+  const dictionary = translations[language];
+
+  if (!dictionary) {
+    return;
+  }
+
+  document.querySelectorAll('[data-i18n]').forEach((element) => {
+    const key = element.dataset.i18n;
+    element.textContent = dictionary[key];
+  });
+
+  document.querySelectorAll('[data-i18n-label]').forEach((element) => {
+    const key = element.dataset.i18nLabel;
+    element.setAttribute('aria-label', dictionary[key]);
+  });
+
+  document.documentElement.lang = language;
+  currentLanguage.textContent = dictionary.code;
+
+  languageChoices.forEach((button) => {
+    const isSelected = button.dataset.language === language;
+    button.setAttribute('aria-pressed', String(isSelected));
+  });
+}
+
+languageChoices.forEach((button) => {
+  button.addEventListener('click', () => {
+    const language = button.dataset.language;
+
+    applyLanguage(language);
+    saveLanguage(language);
+    languageButton.focus();
+    setLanguagePanelOpen(false);
+  });
+});
+
+// Recuperar la preferencia o comenzar en español.
+applyLanguage(getSavedLanguage());

@@ -17,40 +17,6 @@
         >Benjamín Rodríguez</a
       >
 
-      <nav
-        id="main-navigation"
-        aria-label="Navegación principal"
-        class="absolute top-full right-6 z-50 hidden flex-col items-stretch gap-1.5 min-w-36 lg:gap-6 rounded-lg bg-[#0D1117] p-2 shadow-xl lg:static lg:col-start-2 lg:row-start-1 lg:flex lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none border border-white/10 lg:min-w-0 lg:border-0"
-      >
-        <a
-          href="#about"
-          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
-        >
-          Sobre mí
-        </a>
-
-        <a
-          href="#skills"
-          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
-        >
-          Habilidades
-        </a>
-
-        <a
-          href="#projects"
-          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
-        >
-          Proyectos
-        </a>
-
-        <a
-          href="#contact"
-          class="text-center rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 lg:hidden hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
-        >
-          Contacto
-        </a>
-      </nav>
-
       <!-- MENÚ DE IDIOMAS -->
       <div
         class="col-start-2 row-start-1 flex items-center justify-self-end gap-3 lg:col-start-3"
@@ -62,6 +28,7 @@
             aria-label="Seleccionar idioma"
             aria-controls="language-options"
             aria-expanded="false"
+            data-i18n-label="selectLanguage"
             class="flex min-h-11 items-center gap-2 rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
           >
             <svg
@@ -122,6 +89,7 @@
 
         <a
           href="#contact"
+          data-i18n="contact"
           class="hidden rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:block"
         >
           Contacto
@@ -134,7 +102,7 @@
           aria-expanded="false"
           class="cursor-pointer rounded px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A] lg:hidden"
         >
-          <span class="sr-only">Menú principal</span>
+          <span class="sr-only" data-i18n="mainMenu">Menú principal</span>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -149,6 +117,45 @@
           </svg>
         </button>
       </div>
+
+      <nav
+        id="main-navigation"
+        aria-label="Navegación principal"
+        data-i18n-label="navigation"
+        class="absolute top-full right-6 z-50 hidden flex-col items-stretch gap-1.5 min-w-36 lg:gap-6 rounded-lg bg-[#0D1117] p-2 shadow-xl lg:static lg:col-start-2 lg:row-start-1 lg:flex lg:flex-row lg:items-center lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none border border-white/10 lg:min-w-0 lg:border-0"
+      >
+        <a
+          href="#about"
+          data-i18n="about"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+        >
+          Sobre mí
+        </a>
+
+        <a
+          href="#skills"
+          data-i18n="skills"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+        >
+          Habilidades
+        </a>
+
+        <a
+          href="#projects"
+          data-i18n="projects"
+          class="text-right rounded px-3 py-2 hover:bg-white/5 lg:p-0 lg:text-left lg:hover:bg-transparent transition-colors duration-300 hover:text-[#E3FF6A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+        >
+          Proyectos
+        </a>
+
+        <a
+          href="#contact"
+          data-i18n="contact"
+          class="text-center rounded bg-[#E3FF6A] px-4 py-2 font-semibold text-[#0D1117] transition-[background-color,box-shadow] duration-300 lg:hidden hover:bg-[#cbe35e] hover:shadow-[0_0_25px_rgba(227,255,106,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E3FF6A]"
+        >
+          Contacto
+        </a>
+      </nav>
     </header>
 
     <main>
